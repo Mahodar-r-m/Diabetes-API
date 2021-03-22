@@ -11,7 +11,7 @@
     <h1>TensorflowJS API Prediction</h1>
     <input id="pred">
     <script>
-        console.log("Started")
+        console.log("Don't peep in")
         async function loadModel(){
             //import * as tf from '@tensorflow/tfjs';
             const model = await tf.loadLayersModel('model.json');
@@ -78,7 +78,7 @@
         if(arr.length == 9){
             loadModel()
         }else if(arr.length == 2){
-            console.log("Success");
+            console.log("Bad Habit");
         }else{
             document.getElementById('pred').value="Prediction Done";
         }
