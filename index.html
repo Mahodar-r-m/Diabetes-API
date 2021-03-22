@@ -4,13 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TensorflowJS</title>
+    <title>Diabetes API</title>
+    <link rel="icon" href="https://alexanderfo.com/wp-content/uploads/2019/12/1139px-Cloud-API-Logo.svg_.png" type="image/x-icon">
+    <link href='https://fonts.googleapis.com/css?family=Aldrich' rel='stylesheet'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
 </head>
-<body>
-    <h1>TensorflowJS API Prediction</h1>
-    <input id="pred">
+<body class="vh-100 container bg-dark d-flex align-items-center" style="font-family: 'Aldrich';font-size: 22px;" align="center">
+    <span class="text-warning d-flex align-items-center">
+        <h1 id="h1"></h1>
+        &nbsp;&nbsp;
+        <h4 id="h4"></h4>
+    </span>
+    <input id="pred" class="bg-dark" style="border:transparent;">
     <script>
+        var k = 0;
+        function printLetterByLetter(destination, message, speed){
+            var i = 0;
+            var interval = setInterval(function(){
+                document.getElementById(destination).innerHTML += message.charAt(i);
+                i++;
+                if (i > message.length){
+                    clearInterval(interval);
+                    if(k==0){
+                        printLetterByLetter("h4", "using TensorflowJS", 160);
+                    }
+                    k = 1;
+                }
+            }, speed);
+        }
+        // Reference : https://stackoverflow.com/questions/7264974/show-text-letter-by-letter
+        
+        printLetterByLetter("h1", "Diabetes Prediction API", 150);
         console.log("Don't peep in")
         async function loadModel(){
             //import * as tf from '@tensorflow/tfjs';
@@ -80,7 +105,7 @@
         }else if(arr.length == 2){
             console.log("Bad Habit");
         }else{
-            document.getElementById('pred').value="Prediction Done";
+            //document.getElementById('pred').value="Prediction Done";
         }
     </script>
 </body>
