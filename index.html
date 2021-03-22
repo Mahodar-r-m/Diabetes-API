@@ -63,6 +63,8 @@
         // Reference : https://stackoverflow.com/questions/32046990/count-the-number-of-parameters-in-query-string
         if(arr.length==9){
             loadModel()
+        }else if(arr.length==2){
+            console.log("Success");
         }else{
             document.getElementById('pred').value="Prediction Done";
         }
