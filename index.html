@@ -45,6 +45,20 @@
                     Age
                 ]
             ]));
+            
+            // Testing
+            console.log(model.predict(tf.tensor2d([
+                [
+                    Pregnancies,
+                    Glucose,
+                    BloodPressure,
+                    SkinThickness,
+                    Insulin,
+                    BMI,
+                    DiabetesPedigreeFunction,
+                    Age
+                ]
+            ])));
 
             //const prediction = model.predict(tf.tensor2d([[3,126,88,41,235,39.3,0.704,27]])).print(); // 0
             //const prediction = model.predict(tf.tensor2d([[1,103,30,38,83,43.3,0.183,33]])).print(1); // 1
